@@ -35,7 +35,7 @@ func ApiKeyClientSandbox(key string, secret string) Client {
 }
 
 // OAuthClient instantiates the client with OAuth Authentication
-func OAuthClient(tokens *oauthTokens) Client {
+func OAuthClient(tokens *OauthTokens) Client {
 	c := Client{
 		rpc: rpc{
 			auth: clientOAuthWithEnv(tokens, false),
@@ -46,7 +46,7 @@ func OAuthClient(tokens *oauthTokens) Client {
 }
 
 // OAuthClientSandbox instantiates the client with OAuth Authentication for Coinbase Sandbox
-func OAuthClientSandbox(tokens *oauthTokens) Client {
+func OAuthClientSandbox(tokens *OauthTokens) Client {
 	c := Client{
 		rpc: rpc{
 			auth: clientOAuthWithEnv(tokens, true),

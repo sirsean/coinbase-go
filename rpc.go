@@ -14,7 +14,7 @@ import (
 // basePath needed for reading mock JSON files in simulateRequest and for
 // referencing ca-coinbase.crt in OAuthService. Must be fixed path because
 // relative path changes depending on where library called
-var basePath string = os.Getenv("GOPATH") + "/src/github.com/fabioberger/coinbase-go"
+var BasePath string = os.Getenv("GOPATH") + "/src/github.com/fabioberger/coinbase-go"
 
 // Rpc handles the remote procedure call requests
 type rpc struct {
@@ -98,7 +98,7 @@ func (r rpc) simulateRequest(endpoint string, method string) ([]byte, error) {
 	// Test files conform to replacing '/' in endpoint with '_'
 	fileName := strings.Replace(endpoint, "/", "_", -1)
 	// file names also have method type prepended to ensure uniqueness
-	filePath := basePath + "/test_data/" + method + "_" + fileName + ".json"
+	filePath := BasePath + "/test_data/" + method + "_" + fileName + ".json"
 	data, err := ioutil.ReadFile(filePath)
 	if err != nil {
 		return nil, err

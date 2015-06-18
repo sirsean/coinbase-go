@@ -42,7 +42,7 @@ type ContactsParams struct {
 }
 
 // The OAuth Tokens Struct returned from OAuth Authentication
-type oauthTokens struct {
+type OauthTokens struct {
 	AccessToken  string
 	RefreshToken string
 	ExpireTime   int64
@@ -214,7 +214,7 @@ type transactions struct {
 // The sub-structure of a response denominating a transaction
 type transaction struct {
 	Id                 string           `json:"id,omitempty"`
-	CreateAt           string           `json:"create_at,omitempty"`
+	CreatedAt           string           `json:"created_at,omitempty"`
 	Hsh                string           `json:"hsh,omitempty"`
 	Notes              string           `json:"notes,omitempty"`
 	Idem               string           `json:"idem,omitempty"`

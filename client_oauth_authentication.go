@@ -10,18 +10,18 @@ import (
 // and takes care of authenticating OAuth RPC requests on behalf of a client
 // (i.e GetBalance())
 type clientOAuthAuthentication struct {
-	Tokens  *oauthTokens
+	Tokens  *OauthTokens
 	BaseUrl string
 	Client  http.Client
 }
 
 // ClientOAuth instantiates ClientOAuthAuthentication with the client OAuth tokens
-func clientOAuth(tokens *oauthTokens) *clientOAuthAuthentication {
+func clientOAuth(tokens *OauthTokens) *clientOAuthAuthentication {
 	return clientOAuthWithEnv(tokens, false)
 }
 
 // ClientOAuthWithEnv instantiates ClientOAuthAuthentication with the client OAuth tokens and the specified environment
-func clientOAuthWithEnv(tokens *oauthTokens, sandbox bool) *clientOAuthAuthentication {
+func clientOAuthWithEnv(tokens *OauthTokens, sandbox bool) *clientOAuthAuthentication {
 	baseUrl := "https://api.coinbase.com/v1/" // Live Url
 	
 	// Check if should use sandbox
